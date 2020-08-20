@@ -1,0 +1,34 @@
+{
+  "name": "hyperdiscovery",
+  "version": "8.0.0",
+  "description": "Join the p2p swarm for hypercore and hyperdrive feeds.",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && dependency-check . && node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karissa/hyperdiscovery.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karissa/hyperdiscovery/issues"
+  },
+  "homepage": "https://github.com/karissa/hyperdiscovery#readme",
+  "dependencies": {
+    "dat-swarm-defaults": "^1.0.1",
+    "discovery-swarm": "^5.1.1",
+    "safe-buffer": "^5.1.2",
+    "xtend": "^4.0.1"
+  },
+  "devDependencies": {
+    "dependency-check": "^3.1.0",
+    "hypercore": "^6.14.0",
+    "hyperdb": "^3.2.0",
+    "hyperdrive": "^9.13.0",
+    "random-access-memory": "^3.0.0",
+    "standard": "^11.0.1",
+    "tape": "^4.9.0"
+  }
+}
