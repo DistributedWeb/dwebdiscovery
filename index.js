@@ -1,4 +1,4 @@
-var swarmDefaults = require('dat-swarm-defaults')
+var swarmDefaults = require('dwebx-config')
 var disc = require('discovery-swarm')
 var xtend = require('xtend')
 
@@ -17,12 +17,12 @@ function HyperdriveSwarm (archive, opts) {
   var isHyperdbInstance = !!(archive.get && archive.put && archive.replicate && archive.authorize)
 
   if (isHyperdbInstance && !archive.local) {
-    throw new Error('hyperdiscovery swarm must be created after the local hyperdb instance is ready!')
+    throw new Error('dwebdiscovery swarm must be created after the local dappdb instance is ready!')
   }
 
   // Discovery Swarm Options
   opts = xtend({
-    port: 3282,
+    port: 1776,
     id: isHyperdbInstance ? archive.local.id.toString('hex') : archive.id,
     hash: false,
     stream: function (peer) {

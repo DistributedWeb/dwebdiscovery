@@ -1,12 +1,12 @@
-# hyperdiscovery
+# dwebdiscovery
 
-[![build status](https://travis-ci.org/karissa/hyperdiscovery.svg?branch=master)](http://travis-ci.org/karissa/hyperdiscovery)
+[![build status](https://travis-ci.org/karissa/dwebdiscovery.svg?branch=master)](http://travis-ci.org/karissa/dwebdiscovery)
 
-Join the p2p swarm for [hypercore][core], [hyperdrive][drive], and [hyperdb][db] feeds. Uses
+Join the p2p swarm for [ddatabase][core], [ddrive][drive], and [dappdb][db] feeds. Uses
 [discovery-swarm][swarm] under the hood.
 
 ```
-npm install hyperdiscovery
+npm install dwebdiscovery
 ```
 
 ## Usage
@@ -14,10 +14,10 @@ npm install hyperdiscovery
 Run the following code in two different places and they will replicate the contents of the given `ARCHIVE_KEY`.
 
 ```js
-var hyperdrive = require('hyperdrive')
-var swarm = require('hyperdiscovery')
+var ddrive = require('ddrive')
+var swarm = require('dwebdiscovery')
 
-var archive = hyperdrive('./database', 'ARCHIVE_KEY')
+var archive = ddrive('./database', 'ARCHIVE_KEY')
 var sw = swarm(archive)
 sw.on('connection', function (peer, type) {
   console.log('got', peer, type) 
@@ -28,31 +28,31 @@ sw.on('connection', function (peer, type) {
 })
 ```
 
-Will use `discovery-swarm` to attempt to connect peers. Uses `datland-swarm-defaults` for peer introduction defaults on the server side, which can be overwritten (see below).
+Will use `discovery-swarm` to attempt to connect peers. Uses `dwebx-config` for peer introduction defaults on the server side, which can be overwritten (see below).
 
-The module can also create and join a swarm for a hypercore feed:
+The module can also create and join a swarm for a ddatabase feed:
 
 ```js
-var hypercore = require('hypercore')
-var swarm = require('hyperdiscovery')
+var ddatabase = require('ddatabase')
+var swarm = require('dwebdiscovery')
 
-var feed = hypercore('/feed')
+var feed = ddatabase('/feed')
 var sw = swarm(feed)
 ```
 
-The module can also create and join a swarm for a hyperdb feed:
+The module can also create and join a swarm for a dappdb feed:
 
 ```js
-var hyperdb = require('hyperdb')
-var swarm = require('hyperdiscovery')
+var dappdb = require('dappdb')
+var swarm = require('dwebdiscovery')
 
-var db = hyperdb('/feed', 'ARCHIVE_KEY')
+var db = dappdb('/feed', 'ARCHIVE_KEY')
 db.on('ready', function() {
   var sw = swarm(db)
 })
 ```
 
-A hyperdb database must be ready before attempting to connect to the swarm. When `download` is enabled the swarm will automatically `db.authorize()` all connecting peers.
+A dappdb database must be ready before attempting to connect to the swarm. When `download` is enabled the swarm will automatically `db.authorize()` all connecting peers.
 
 ## API
 
@@ -77,22 +77,22 @@ Exit the swarm
   * `utp`: use utp in discovery swarm
   * `tcp`: use tcp in discovery swarm
 
-Defaults from datland-swarm-defaults can also be overwritten:
+Defaults from dwebx-config can also be overwritten:
 
   * `dns.server`: DNS server
   * `dns.domain`: DNS domain
   * `dht.bootstrap`: distributed hash table bootstrapping nodes
 
 ## See Also
-- [mafintosh/hypercore][core]
-- [mafintosh/hyperdrive][drive]
-- [mafintosh/hyperdb][db]
+- [mafintosh/ddatabase][core]
+- [mafintosh/ddrive][drive]
+- [mafintosh/dappdb][db]
 - [mafintosh/discovery-swarm][swarm]
 
 ## License
 ISC
 
-[core]: https://github.com/mafintosh/hypercore
-[drive]: https://github.com/mafintosh/hyperdrive
-[db]: https://github.com/mafintosh/hyperdb
-[swarm]: https://github.com/mafintosh/discovery-swarm
+[core]: https://github.com/distributedweb/ddatabase
+[drive]: https://github.com/distributedweb/ddrive
+[db]: https://github.com/distributedweb/dappdb
+[swarm]: https://github.com/distributedweb/discovery-swarm
