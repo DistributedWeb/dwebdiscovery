@@ -1,4 +1,4 @@
-var swarmDefaults = require('datland-swarm-defaults')
+var swarmDefaults = require('dwebx-config')
 var disc = require('discovery-swarm')
 var xtend = require('xtend')
 
@@ -16,7 +16,7 @@ function HyperdriveSwarm (archive, opts) {
 
   // Discovery Swarm Options
   opts = xtend({
-    port: 3282,
+    port: 1776,
     id: archive.id,
     hash: false,
     stream: function (peer) {

@@ -1,31 +1,31 @@
 {
-  "name": "hyperdiscovery",
-  "version": "7.0.0",
-  "description": "Join the p2p swarm for hypercore and hyperdrive feeds.",
+  "name": "dwebdiscovery",
+  "version": "1.0.0",
+  "description": "Join the p2p swarm for ddatabase and ddrive feeds.",
   "main": "index.js",
   "scripts": {
     "test": "standard && dependency-check . && node test.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/karissa/hyperdiscovery.git"
+    "url": "git+https://github.com/karissa/dwebdiscovery.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/karissa/hyperdiscovery/issues"
+    "url": "https://github.com/karissa/dwebdiscovery/issues"
   },
-  "homepage": "https://github.com/karissa/hyperdiscovery#readme",
+  "homepage": "https://github.com/karissa/dwebdiscovery#readme",
   "dependencies": {
-    "datland-swarm-defaults": "^1.0.0",
+    "dwebx-config": "git://github.com/DistributedWeb/dwebx-config.git#f39be9245f9814b757bdeceed794f449a74a56bc",
     "discovery-swarm": "^4.0.2",
     "safe-buffer": "^5.1.1",
     "xtend": "^4.0.1"
   },
   "devDependencies": {
     "dependency-check": "^2.8.0",
-    "hypercore": "^5.11.0",
-    "hyperdrive": "^8.2.1",
+    "ddatabase": "git://github.com/DistributedWeb/ddatabase.git#44cba5f5935b6d0583cfd2a3f7a5516df778325f",
+    "ddrive": "git://github.com/DistributedWeb/ddrive.git#e1c7b7e012285eaeba5cc0ea834c68ee98649857",
     "random-access-memory": "^2.4.0",
     "standard": "^7.1.2",
     "tape": "^4.6.0"

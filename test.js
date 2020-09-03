@@ -1,12 +1,12 @@
 var tape = require('tape')
-var hypercore = require('hypercore')
+var ddatabase = require('ddatabase')
 var ram = require('random-access-memory')
 var swarm = require('.')
 
 function getSwarms (opts, cb) {
-  var feed1 = hypercore(ram)
+  var feed1 = ddatabase(ram)
   feed1.once('ready', function () {
-    var feed2 = hypercore(ram, feed1.key)
+    var feed2 = ddatabase(ram, feed1.key)
     feed2.once('ready', function () {
       var write = swarm(feed1, opts)
       var read = swarm(feed2, opts)
